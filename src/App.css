@@ -1,3 +1,16 @@
 .App {
     text-align: center;
 }
+
+:global(.row) {
+    display: flex;
+    justify-content: space-between;
+}
+
+:global(.col) {
+    flex: 1;
+}
+
+:global(.center) {
+    text-align: center;
+}
