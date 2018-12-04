@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Title from './components/Title/Title';
+import TodoListView from './containers/TodoList/TodoList';
+import DetailsView from './containers/DetailsView/DetailsView';
 
 class App extends Component {
     render() {
@@ -13,10 +15,10 @@ class App extends Component {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <p>Hello</p>
+                        <TodoListView />
                     </div>
                     <div className="col">
-                        <p>World</p>
+                        <DetailsView />
                     </div>
                 </div>
             </div>
