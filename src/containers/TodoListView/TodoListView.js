@@ -9,7 +9,7 @@ class TodoListView extends Component {
     render() {
         return (
             <div>
-                <TodoList />
+                <TodoList todos={this.props.todos} />
                 <ButtonPanel />
             </div>
         );

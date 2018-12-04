@@ -1,7 +1,12 @@
 import * as actions from '../actions/actionTypes';
+import Todo from '../../model/Todo';
+
 
 const initialState = {
-    todos: []
+    todos: [
+        new Todo('First', 'The first TODO'),
+        new Todo('Second', 'The second TODO')
+    ]
 };
 
 const reducer = (state = initialState, action) => {
