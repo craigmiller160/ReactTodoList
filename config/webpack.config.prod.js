@@ -58,6 +58,13 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 // common function to get style loaders
 const getStyleLoaders = (cssOptions, preProcessor) => {
+    const newCssOptions = {
+        ...cssOptions,
+        importLoaders: 1,
+        modules: true,
+        localIdentName: '[name]__[local]___[hash:base64:5]'
+    };
+
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
@@ -68,7 +75,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     },
     {
       loader: require.resolve('css-loader'),
-      options: cssOptions,
+      options: newCssOptions,
     },
     {
       // Options for PostCSS as we reference these options twice
