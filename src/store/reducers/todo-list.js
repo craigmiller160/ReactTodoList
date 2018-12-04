@@ -5,16 +5,24 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+    const todos = state.todos.slice();
     switch (action.type) {
         case actions.ADD_TODO:
-            const todos = state.todos.slice();
+            todos.push(action.value);
 
             return {
-                ...state
+                ...state,
+                todos
             };
         case actions.REMOVE_TODO:
+            const index = todos.findIndex(todo => todo.equals(action.value));
+            if (index > -1) {
+                todos.splice(index, 1);
+            }
+
             return {
-                ...state
+                ...state,
+                todos
             };
         default:
             return state;
