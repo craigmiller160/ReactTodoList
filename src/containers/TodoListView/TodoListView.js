@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import TodoList from '../../components/TodoList/TodoList';
+import ButtonPanel from '../../components/shared/ButtonPanel/ButtonPanel';
 
 class TodoListView extends Component {
 
     render() {
         return (
             <div>
-                <h1>TodoList</h1>
+                <TodoList />
+                <ButtonPanel />
             </div>
         );
     }

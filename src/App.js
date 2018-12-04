@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Title from './components/Title/Title';
-import TodoListView from './containers/TodoList/TodoList';
+import TodoListView from './containers/TodoListView/TodoListView';
 import DetailsView from './containers/DetailsView/DetailsView';
 
 class App extends Component {
