@@ -9,7 +9,10 @@ const Button = props => {
     };
 
     return (
-        <button className={classes.Button} style={style} type="button">
+        <button className={classes.Button}
+                style={style}
+                type="button"
+                onClick={props.click}>
             {props.label}
         </button>
     );
@@ -18,7 +21,8 @@ const Button = props => {
 Button.propTypes = {
     label: PropTypes.string.isRequired,
     backgroundColor: PropTypes.string,
-    color: PropTypes.string
+    color: PropTypes.string,
+    click: PropTypes.func
 };
 
 export default Button;
