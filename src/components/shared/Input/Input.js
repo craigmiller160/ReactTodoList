@@ -11,12 +11,16 @@ const Input = props => {
     if (type === 'textarea') {
         input = <textarea id={id}
                           onChange={props.change}
-                          rows="10"/>
+                          disabled={props.disabled}
+                          rows="10"
+                          value={props.value}/>
     }
     else {
         input = <input id={id}
                        type={type}
-                       onChange={props.change} />;
+                       onChange={props.change}
+                       disabled={props.disabled}
+                       value={props.value} />;
     }
 
     const inputClasses = [classes.Input, 'row'].join(' ');
@@ -36,10 +40,16 @@ const Input = props => {
     );
 };
 
+Input.defaultProps = {
+    disabled: false
+};
+
 Input.propTypes = {
     label: PropTypes.string.isRequired,
     type: PropTypes.string,
-    change: PropTypes.func
+    change: PropTypes.func,
+    disabled: PropTypes.bool.isRequired,
+    value: PropTypes.string
 };
 
 export default Input;

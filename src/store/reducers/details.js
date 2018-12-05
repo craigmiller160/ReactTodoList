@@ -9,6 +9,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actions.SELECT_TODO:
+            console.log(action.todo);
             return {
                 ...state,
                 selected: action.todo,
