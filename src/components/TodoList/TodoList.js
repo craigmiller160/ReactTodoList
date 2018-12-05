@@ -4,19 +4,20 @@ import TodoItem from './TodoItem/TodoItem';
 import classes from './TodoList.css';
 
 const TodoList = props => {
-    const todos = props.todos.map((todo, index) => (
-        <TodoItem title={todo.title} key={index} />
-    ));
-
     return (
         <div className={classes.TodoList}>
-            {todos}
+            {props.todos.map((todo, index) => (
+                <TodoItem title={todo.title}
+                          key={index}
+                          select={() => props.selectTodo(todo, index)} />
+            ))}
         </div>
     );
 };
 
 TodoList.propTypes = {
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired,
+    selectTodo: PropTypes.func.isRequired
 };
 
 export default TodoList;
