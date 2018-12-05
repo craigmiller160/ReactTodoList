@@ -7,15 +7,19 @@ const TodoDetails = props => {
     const title = props.selected ? props.selected.title : '';
     const description = props.selected ? props.selected.description : '';
 
+    console.log(props.selected); //TODO delete this
+
     return (
         <div className={classes.TodoDetails}>
             <Input label="Title"
                    value={title}
-                   change={props.updateTitle} />
+                   change={props.updateTitle}
+                   disabled={props.selected === undefined || props.selected === null} />
             <Input label="Description"
                    type="textarea"
                    value={description}
-                   change={props.updateDescription} />
+                   change={props.updateDescription}
+                   disabled={props.selected === undefined || props.selected === null} />
         </div>
     );
 };

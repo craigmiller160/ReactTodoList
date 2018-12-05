@@ -21,7 +21,8 @@ class DetailsView extends Component {
         return (
             <div className={classes.DetailsView}>
                 <TitleButtonPanel title="Todo Details">
-                    <Button label="Delete Todo" />
+                    <Button label="Delete Todo"
+                            disabled={this.props.selected === undefined || this.props.selected === null} />
                 </TitleButtonPanel>
                 <TodoDetails selected={this.props.selected}
                              updateTitle={this.updateTodoTitle}

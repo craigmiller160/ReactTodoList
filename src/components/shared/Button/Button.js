@@ -13,10 +13,15 @@ const Button = props => {
         <button className={classes.Button}
                 style={style}
                 type="button"
-                onClick={props.click}>
+                onClick={props.click}
+                disabled={props.disabled}>
             {props.label}
         </button>
     );
+};
+
+Button.defaultProps = {
+    disabled: false
 };
 
 Button.propTypes = {
@@ -24,7 +29,8 @@ Button.propTypes = {
     backgroundColor: PropTypes.string,
     color: PropTypes.string,
     click: PropTypes.func,
-    borderColor: PropTypes.string
+    borderColor: PropTypes.string,
+    disabled: PropTypes.bool
 };
 
 export default Button;

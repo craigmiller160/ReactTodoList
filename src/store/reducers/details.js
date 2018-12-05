@@ -1,8 +1,7 @@
 import * as actions from '../actions/actionTypes';
-import Todo from '../../model/Todo';
 
 const initialState = {
-    selected: new Todo(),
+    selected: null,
     index: -1
 };
 
