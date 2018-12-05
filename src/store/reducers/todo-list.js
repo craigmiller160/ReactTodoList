@@ -19,11 +19,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 todos
             };
-        case actions.REMOVE_TODO:
-            const index = todos.findIndex(todo => todo.equals(action.todo));
-            if (index > -1) {
-                todos.splice(index, 1);
-            }
+        case actions.REMOVE_TODO_LIST:
+            todos.splice(action.index, 1);
 
             return {
                 ...state,

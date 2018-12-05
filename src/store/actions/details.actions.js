@@ -14,3 +14,9 @@ export const updateTodoDetails = todo => {
         todo
     }
 };
+
+export const removeTodoDetails = () => {
+    return {
+        type: actions.REMOVE_TODO_DETAILS
+    }
+};

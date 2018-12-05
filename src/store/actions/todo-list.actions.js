@@ -7,10 +7,10 @@ export const addTodo = todo => {
     }
 };
 
-export const removeTodo = todo => {
+export const removeTodoList = index => {
     return {
-        type: actions.REMOVE_TODO,
-        todo
+        type: actions.REMOVE_TODO_LIST,
+        index
     }
 };
 

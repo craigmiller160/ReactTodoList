@@ -18,6 +18,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 selected: action.todo
             };
+        case actions.REMOVE_TODO_DETAILS:
+            return {
+                ...state,
+                selected: null,
+                index: -1
+            };
         default:
             return state;
     }

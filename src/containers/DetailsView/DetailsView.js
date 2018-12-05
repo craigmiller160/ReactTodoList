@@ -15,6 +15,7 @@ class DetailsView extends Component {
         this.updateTodo = this.updateTodo.bind(this);
         this.updateTodoTitle = this.updateTodoTitle.bind(this);
         this.updateTodoDescription = this.updateTodoDescription.bind(this);
+        this.removeTodo = this.removeTodo.bind(this);
     }
 
     render() {
@@ -22,6 +23,7 @@ class DetailsView extends Component {
             <div className={classes.DetailsView}>
                 <TitleButtonPanel title="Todo Details">
                     <Button label="Delete Todo"
+                            click={this.removeTodo}
                             disabled={this.props.selected === undefined || this.props.selected === null} />
                 </TitleButtonPanel>
                 <TodoDetails selected={this.props.selected}
@@ -29,6 +31,11 @@ class DetailsView extends Component {
                              updateDescription={this.updateTodoDescription} />
             </div>
         );
+    }
+
+    removeTodo() {
+        this.props.onRemoveTodoDetails();
+        this.props.onRemoveTodoList(this.props.index);
     }
 
     updateTodoDescription(event) {
@@ -56,7 +63,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onUpdateTodoDetails: todo => dispatch(detailsActions.updateTodoDetails(todo)),
-        onUpdateTodoList: (todo, index) => dispatch(todoListActions.updateTodoList(todo, index))
+        onUpdateTodoList: (todo, index) => dispatch(todoListActions.updateTodoList(todo, index)),
+        onRemoveTodoDetails: () => dispatch(detailsActions.removeTodoDetails()),
+        onRemoveTodoList: index => dispatch(todoListActions.removeTodoList(index))
     }
 };
 
