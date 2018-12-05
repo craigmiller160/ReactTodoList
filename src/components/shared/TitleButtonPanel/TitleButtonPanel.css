@@ -1,0 +1,15 @@
+.TitleButtonPanel {
+    margin: 5px;
+    flex-direction: row;
+    text-align: left;
+    align-content: center;
+    align-items: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.title {
+    text-decoration: underline;
+}

@@ -1,5 +1,5 @@
 .TodoList {
-    width: 60%;
+    /*width: 60%;*/
     display: flex;
     flex-direction: column;
     align-content: center;

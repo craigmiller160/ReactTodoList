@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TodoList from '../../components/TodoList/TodoList';
-import ButtonPanel from '../../components/shared/ButtonPanel/ButtonPanel';
+import TitleButtonPanel from '../../components/shared/TitleButtonPanel/TitleButtonPanel';
 import * as todoListActions from '../../store/actions/todo-list.actions';
 import classes from './TodoListView.css';
 import Button from '../../components/shared/Button/Button';
@@ -12,12 +12,9 @@ class TodoListView extends Component {
     render() {
         return (
             <div className={classes.TodoListView}>
-                <div className={classes.title}>
-                    <h2>Todos</h2>
-                </div>
-                <ButtonPanel>
+                <TitleButtonPanel title="Todos">
                     <Button label="Add Todo" click={this.onAddTodo} />
-                </ButtonPanel>
+                </TitleButtonPanel>
                 <TodoList todos={this.props.todos} />
             </div>
         );
