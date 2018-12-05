@@ -10,16 +10,20 @@ const TodoDetails = props => {
     return (
         <div className={classes.TodoDetails}>
             <Input label="Title"
-                   value={title} />
+                   value={title}
+                   change={props.updateTitle} />
             <Input label="Description"
                    type="textarea"
-                   value={description} />
+                   value={description}
+                   change={props.updateDescription} />
         </div>
     );
 };
 
 TodoDetails.propTypes = {
-    selected: PropTypes.object
+    selected: PropTypes.object,
+    updateTitle: PropTypes.func,
+    updateDescription: PropTypes.func
 };
 
 export default TodoDetails;

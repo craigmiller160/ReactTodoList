@@ -6,12 +6,15 @@ import classes from './DetailsView.css';
 import { connect } from 'react-redux';
 import * as detailsActions from '../../store/actions/details.actions';
 import * as todoListActions from '../../store/actions/todo-list.actions';
+import Todo from '../../model/Todo';
 
 class DetailsView extends Component {
 
     constructor() {
         super();
         this.updateTodo = this.updateTodo.bind(this);
+        this.updateTodoTitle = this.updateTodoTitle.bind(this);
+        this.updateTodoDescription = this.updateTodoDescription.bind(this);
     }
 
     render() {
@@ -20,13 +23,24 @@ class DetailsView extends Component {
                 <TitleButtonPanel title="Todo Details">
                     <Button label="Delete Todo" />
                 </TitleButtonPanel>
-                <TodoDetails selected={this.props.selected} />
+                <TodoDetails selected={this.props.selected}
+                             updateTitle={this.updateTodoTitle}
+                             updateDescription={this.updateTodoDescription} />
             </div>
         );
     }
 
-    updateTodo() {
-        //TODO need to properly update the TODO in both places
+    updateTodoDescription(description) {
+        this.updateTodo(new Todo(this.props.selected.title, description));
+    }
+
+    updateTodoTitle(title) {
+        this.updateTodo(new Todo(title, this.props.selected.description));
+    }
+
+    updateTodo(todo) {
+        this.props.onUpdateTodoDetails(todo);
+        this.props.onUpdateTodoList(todo, this.props.index);
     }
 
 }
@@ -40,8 +54,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onUpdateTodoDetails: () => dispatch(detailsActions.updateTodoDetails(null)),
-        onUpdateTodoList: () => dispatch(todoListActions.updateTodoList(null))
+        onUpdateTodoDetails: todo => dispatch(detailsActions.updateTodoDetails(todo)),
+        onUpdateTodoList: (todo, index) => dispatch(todoListActions.updateTodoList(todo, index))
     }
 };
 
