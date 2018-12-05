@@ -3,3 +3,7 @@
     border-radius: 15px;
     margin: 5px;
 }
+
+.TodoItem:hover {
+    background-color: lightgray;
+}
