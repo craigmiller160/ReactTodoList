@@ -1,4 +1,5 @@
 export const ADD_TODO = 'ADD_TODO';
 export const REMOVE_TODO = 'REMOVE_TODO';
 export const SELECT_TODO = 'SELECT_TODO';
-export const UPDATE_TODO = 'SAVE_TODO';
+export const UPDATE_TODO_LIST = 'UPDATE_TODO_LIST';
+export const UPDATE_TODO_DETAILS = 'UPDATE_TODO_DETAILS';

@@ -13,16 +13,25 @@ const reducer = (state = initialState, action) => {
     const todos = state.todos.slice();
     switch (action.type) {
         case actions.ADD_TODO:
-            todos.push(action.value);
+            todos.push(action.todo);
 
             return {
                 ...state,
                 todos
             };
         case actions.REMOVE_TODO:
-            const index = todos.findIndex(todo => todo.equals(action.value));
+            const index = todos.findIndex(todo => todo.equals(action.todo));
             if (index > -1) {
                 todos.splice(index, 1);
+            }
+
+            return {
+                ...state,
+                todos
+            };
+        case actions.UPDATE_TODO_LIST:
+            if (action.index >= 0) {
+                todos[action.index] = action.todo;
             }
 
             return {
