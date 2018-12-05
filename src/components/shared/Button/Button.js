@@ -5,7 +5,8 @@ import classes from './Button.css';
 const Button = props => {
     const style = {
         backgroundColor: props.backgroundColor,
-        color: props.color
+        color: props.color,
+        borderColor: props.borderColor
     };
 
     return (
@@ -22,7 +23,8 @@ Button.propTypes = {
     label: PropTypes.string.isRequired,
     backgroundColor: PropTypes.string,
     color: PropTypes.string,
-    click: PropTypes.func
+    click: PropTypes.func,
+    borderColor: PropTypes.string
 };
 
 export default Button;

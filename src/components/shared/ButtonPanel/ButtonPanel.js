@@ -1,9 +1,10 @@
 import React from 'react';
+import classes from './ButtonPanel.css';
 
 const ButtonPanel = props => {
     return (
-        <div>
-            <p>ButtonPanel</p>
+        <div className={classes.ButtonPanel}>
+            {props.children}
         </div>
     );
 };

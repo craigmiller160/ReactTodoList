@@ -4,6 +4,8 @@ import TodoList from '../../components/TodoList/TodoList';
 import ButtonPanel from '../../components/shared/ButtonPanel/ButtonPanel';
 import * as todoListActions from '../../store/actions/todo-list.actions';
 import classes from './TodoListView.css';
+import Button from '../../components/shared/Button/Button';
+import Todo from '../../model/Todo';
 
 class TodoListView extends Component {
 
@@ -13,7 +15,9 @@ class TodoListView extends Component {
                 <div className={classes.title}>
                     <h2>Todos</h2>
                 </div>
-                <ButtonPanel />
+                <ButtonPanel>
+                    <Button label="Add Todo" click={this.onAddTodo} />
+                </ButtonPanel>
                 <TodoList todos={this.props.todos} />
             </div>
         );
@@ -29,7 +33,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAddTodo: todo => dispatch(todoListActions.addTodo(todo))
+        onAddTodo: todo => dispatch(todoListActions.addTodo(new Todo('New Todo', 'A new Todo')))
     }
 };
 

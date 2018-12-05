@@ -1,3 +1,6 @@
 .Button {
-
+    font: 15px sans-serif;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
 }

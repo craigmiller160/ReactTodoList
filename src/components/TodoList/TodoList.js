@@ -4,8 +4,8 @@ import TodoItem from './TodoItem/TodoItem';
 import classes from './TodoList.css';
 
 const TodoList = props => {
-    const todos = props.todos.map(todo => (
-        <TodoItem title={todo.title}/>
+    const todos = props.todos.map((todo, index) => (
+        <TodoItem title={todo.title} key={index} />
     ));
 
     return (
