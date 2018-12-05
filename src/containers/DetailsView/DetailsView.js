@@ -9,6 +9,11 @@ import * as todoListActions from '../../store/actions/todo-list.actions';
 
 class DetailsView extends Component {
 
+    constructor() {
+        super();
+        this.updateTodo = this.updateTodo.bind(this);
+    }
+
     render() {
         return (
             <div className={classes.DetailsView}>
@@ -18,6 +23,10 @@ class DetailsView extends Component {
                 <TodoDetails selected={this.props.selected} />
             </div>
         );
+    }
+
+    updateTodo() {
+        //TODO need to properly update the TODO in both places
     }
 
 }

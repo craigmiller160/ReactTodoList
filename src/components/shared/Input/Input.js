@@ -20,7 +20,7 @@ const Input = props => {
                        type={type}
                        onChange={props.change}
                        disabled={props.disabled}
-                       value={props.value} />;
+                       value={props.value} />
     }
 
     const inputClasses = [classes.Input, 'row'].join(' ');
