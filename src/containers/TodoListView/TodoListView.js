@@ -13,7 +13,7 @@ class TodoListView extends Component {
         return (
             <div className={classes.TodoListView}>
                 <TitleButtonPanel title="Todos">
-                    <Button label="Add Todo" click={this.onAddTodo} />
+                    <Button label="Add Todo" click={this.props.onAddTodo} />
                 </TitleButtonPanel>
                 <TodoList todos={this.props.todos} />
             </div>
@@ -30,7 +30,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAddTodo: todo => dispatch(todoListActions.addTodo(new Todo('New Todo', 'A new Todo')))
+        onAddTodo: () => dispatch(todoListActions.addTodo(new Todo('New Todo', 'A new Todo')))
     }
 };
 
