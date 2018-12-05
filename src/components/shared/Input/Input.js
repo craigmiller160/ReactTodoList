@@ -11,7 +11,7 @@ const Input = props => {
     if (type === 'textarea') {
         input = <textarea id={id}
                           onChange={props.change}
-                          rows="5"/>
+                          rows="10"/>
     }
     else {
         input = <input id={id}
@@ -19,12 +19,19 @@ const Input = props => {
                        onChange={props.change} />;
     }
 
+    const inputClasses = [classes.Input, 'row'].join(' ');
+    const colClasses = [classes.grow, 'col'].join(' ');
+
     return (
-        <div className={classes.Input}>
-            <label htmlFor={id}>
-                {props.label}
-            </label>
-            {input}
+        <div className={inputClasses}>
+            <div className={colClasses}>
+                <label htmlFor={id}>
+                    {props.label}
+                </label>
+            </div>
+            <div className={colClasses}>
+                {input}
+            </div>
         </div>
     );
 };

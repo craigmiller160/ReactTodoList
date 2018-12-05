@@ -1,7 +1,25 @@
 .Input {
-
+    margin: 5px;
+    align-items: left;
+    text-align: left;
 }
 
 .Input textarea {
     resize: none;
+}
+
+.Input label {
+    font-weight: bold;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.Input input,
+.Input textarea {
+    flex-grow: 1;
+    margin: 0;
+    width: 100%;
+    border: 1px solid black;
 }
