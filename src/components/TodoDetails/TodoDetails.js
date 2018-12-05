@@ -7,8 +7,6 @@ const TodoDetails = props => {
     const title = props.selected ? props.selected.title : '';
     const description = props.selected ? props.selected.description : '';
 
-    console.log(props.selected); //TODO delete this
-
     return (
         <div className={classes.TodoDetails}>
             <Input label="Title"
