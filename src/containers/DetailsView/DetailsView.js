@@ -30,12 +30,12 @@ class DetailsView extends Component {
         );
     }
 
-    updateTodoDescription(description) {
-        this.updateTodo(new Todo(this.props.selected.title, description));
+    updateTodoDescription(event) {
+        this.updateTodo(new Todo(this.props.selected.title, event.target.value));
     }
 
-    updateTodoTitle(title) {
-        this.updateTodo(new Todo(title, this.props.selected.description));
+    updateTodoTitle(event) {
+        this.updateTodo(new Todo(event.target.value, this.props.selected.description));
     }
 
     updateTodo(todo) {
