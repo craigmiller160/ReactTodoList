@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TodoItem from './TodoItem/TodoItem';
+import classes from './TodoList.css';
 
 const TodoList = props => {
     const todos = props.todos.map(todo => (
-        <p>{todo.title}</p>
+        <TodoItem title={todo.title}/>
     ));
 
     return (
-        <div>
+        <div className={classes.TodoList}>
             {todos}
         </div>
     );
