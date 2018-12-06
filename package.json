@@ -101,6 +101,7 @@
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },
+    "setupTestFrameworkScriptFile": "./tests.setup.js",
     "moduleFileExtensions": [
       "web.js",
       "js",

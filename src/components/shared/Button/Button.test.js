@@ -1,9 +1,6 @@
 import React from 'react';
-import { mount, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { mount } from 'enzyme';
 import Button from './Button';
-
-configure({adapter: new Adapter()});
 
 describe('Button component', () => {
     const BUTTON_LABEL = 'ButtonLabel';
@@ -28,7 +25,7 @@ describe('Button component', () => {
             label: BUTTON_LABEL,
             backgroundColor: BACKGROUND_COLOR,
             color: COLOR,
-            borderColor: BORDER_COLOR,
+            borderColor: BORDER_COLOR
         };
 
         //TODO missing the click prop
@@ -40,6 +37,5 @@ describe('Button component', () => {
         const buttons = button().find('button');
         expect(buttons.length).toEqual(1);
     });
-
 
 });
