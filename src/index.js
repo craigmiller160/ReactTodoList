@@ -1,20 +1,10 @@
 import React from 'react';
-import {combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import todoListReducer from './store/reducers/todo-list';
-import detailsReducer from './store/reducers/details';
-
-
-const rootReducer = combineReducers({
-    todoList: todoListReducer,
-    details: detailsReducer
-});
-
-const store = createStore(rootReducer);
+import store from './store/store';
 
 const app = (
     <Provider store={store}>
