@@ -1,5 +1,5 @@
-import todoListReducer from './store/reducers/todo-list';
-import detailsReducer from './store/reducers/details';
+import todoListReducer from './reducers/todo-list';
+import detailsReducer from './reducers/details';
 import { combineReducers, createStore } from 'redux';
 
 const rootReducer = combineReducers({
