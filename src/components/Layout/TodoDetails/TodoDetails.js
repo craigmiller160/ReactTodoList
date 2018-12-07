@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './TodoDetails.css';
-import Input from '../shared/Input/Input';
+import Input from '../../shared/Input/Input';
 
 const TodoDetails = props => {
     const title = props.selected ? props.selected.title : '';

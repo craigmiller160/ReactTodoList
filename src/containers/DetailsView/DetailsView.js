@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoDetails from '../../components/TodoDetails/TodoDetails';
+import TodoDetails from '../../components/Layout/TodoDetails/TodoDetails';
 import TitleButtonPanel from '../../components/shared/TitleButtonPanel/TitleButtonPanel';
 import Button from '../../components/shared/Button/Button';
 import classes from './DetailsView.css';

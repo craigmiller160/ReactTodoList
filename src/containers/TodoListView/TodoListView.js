@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import TodoList from '../../components/TodoList/TodoList';
+import TodoList from '../../components/Layout/TodoList/TodoList';
 import TitleButtonPanel from '../../components/shared/TitleButtonPanel/TitleButtonPanel';
 import * as todoListActions from '../../store/actions/todo-list.actions';
 import * as detailsActions from '../../store/actions/details.actions';

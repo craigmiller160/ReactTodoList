@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Layout.css';
-import Title from '../Title/Title';
+import Title from './Title/Title';
 import TodoListView from '../../containers/TodoListView/TodoListView';
 import DetailsView from '../../containers/DetailsView/DetailsView';
 
